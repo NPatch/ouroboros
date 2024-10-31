@@ -154,8 +154,8 @@ def extract_text_range(path, lineno, end_lineno):
     
 def main():
     parser = argparse.ArgumentParser(description='Analyze a Python file and output the result.')
-    parser.add_argument('-input', help='The path to the input Python file.', required=True)
-    parser.add_argument('-output', help='The name of the output file.', nargs='?', default="output.py")
+    parser.add_argument('-i', '--input', help='The path to the input Python file.', required=True)
+    parser.add_argument('-o', '--output', help='The name of the output file.', nargs='?', default="output.py")
     parser.add_argument('-f', '--force', action='store_true', help='Force overwrite without asking')
     
     args = parser.parse_args()
