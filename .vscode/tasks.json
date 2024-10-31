@@ -1,0 +1,49 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Ouroboros: Build",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "setup.py",
+                "sdist",
+                "bdist_wheel"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Ouroboros: Pip Install",
+            "type": "shell",
+            "command": "pip",
+            "args": [
+                "install",
+                "dist/ouroboros-1.0-py3-none-any.whl",
+                "--force-reinstall"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
